@@ -1,0 +1,16 @@
+.with-sidebar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+
+    & > .not-sidebar {
+        flex-basis: 25rem;
+        flex-grow: 999;
+    }
+
+    & > .sidebar {
+        flex-basis: 24rem;
+        flex-grow: 0;
+    }
+}

@@ -1,0 +1,20 @@
+.new-blog {
+    margin-block-start: var(--space-2xs);
+
+    &__title {
+        margin-block-start: var(--space-2xs);
+        transition: color .25s ease-in-out;
+    }
+
+    &__text {
+        margin-block-start: var(--space-2xs);
+        color: var(--color-neutral-grayish-blue);
+    }
+
+    &:hover {
+        .new-blog__title {
+            color: var(--color-primary-soft-orange);
+        }
+        cursor: pointer;
+    }
+}

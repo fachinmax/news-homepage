@@ -1,0 +1,36 @@
+@use "../abstracts/breakpoints";
+@use "../abstracts/colors";
+
+
+.navbar {
+    display: flex;
+
+    @media (max-width: map-get(breakpoints.$breakpoints, 'tablet')) {
+        flex-direction: column;
+        position: fixed;
+        z-index: 5;
+        inset-block: 0;
+        right: 0;
+        left: 40%;
+        padding-inline: var(--space-3xs);
+        padding-block-start: var(--space-xl);
+        background-color: var(--color-neutral-off-white);
+        transition: transform 0.25s ease-in-out;
+
+        & * {
+           color: var(--color-neutral-very-dark-blue); 
+        }
+
+        & > * + * {
+            margin-block-start: var(--space-xs);
+        }
+
+        &[data-visible=true] {
+            transform: translateX(0%);
+        }
+
+        &[data-visible=false] {
+            transform: translateX(100%);
+        }
+    }
+}

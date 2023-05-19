@@ -1,0 +1,27 @@
+@use "../abstracts/colors";
+@use "../abstracts/typography";
+
+
+@each $weight, $value in typography.$weights {
+    .font-weight-#{$weight} {
+        font-weight: $value;
+    }
+};
+
+@each $size, $value in typography.$sizes {
+    .font-size-#{$size} {
+        font-size: $value;
+    }
+};
+
+@each $type, $hues in colors.$colors {
+    @each $hue, $value in $hues {
+        .color-#{$type}-#{$hue} {
+            color: $value;
+        }
+
+        .background-#{$type}-#{$hue} {
+            background-color: $value;
+        }
+    }
+};

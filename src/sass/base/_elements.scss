@@ -1,0 +1,78 @@
+@use "../abstracts/colors";
+
+
+* {
+    color: var(--color-neutral-dark-grayish-blue);
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    font-size: var(--step-0);
+    min-height: 100vh;
+    padding-inline: var(--space-s-m);
+    padding-block: var(--space-xs-s);
+
+    &[data-background=bright] {
+        background-color: transparent;
+
+    }
+
+    &[data-background=dark] {
+        background-color: var(--color-neutral-very-dark-blue-opacity);
+    }
+}
+
+header {
+    margin-block-end: var(--space-xs);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+h1 {
+    font-size: var(--step-4);
+    font-weight: var(--font-weight-800);
+    color: var(--color-neutral-very-dark-blue);
+}
+
+h2 {
+    font-size: var(--step-1);
+    font-weight: var(--font-weight-700);
+    color: var(--color-neutral-off-white);
+}
+
+p {
+    line-height: 1.5;
+}
+
+li {
+    margin-inline-start: var(--space-2xs);
+
+    & > a:hover {
+        color: var(--color-primary-soft-orange);
+    }
+}
+
+button {
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+footer {
+    margin-inline: auto;
+    font-size: 11px;
+    text-align: center;
+
+    & a {
+        color: var(--color-neutral-blue);
+    }
+}

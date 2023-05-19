@@ -1,0 +1,74 @@
+@use "../abstracts/colors";
+@use "../abstracts/typography";
+
+
+:root {
+    @each $weight, $value in typography.$weights {
+        --font-weight-#{$weight}: #{$value};
+    };
+
+    @each $type, $hues in colors.$colors {
+        @each $hue, $value in $hues {
+            --color-#{$type}-#{$hue}: #{$value};
+            --background-#{$type}-#{$hue}: #{$value};
+        }
+    };
+
+    
+    // font sizes
+
+    // Step 0: 16.00px → 18.00px 
+    --step-0: clamp(1.00rem, calc(0.96rem + 0.18vw), 1.13rem);
+    // Step 1: 18.00px → 22.50px 
+    --step-1: clamp(1.13rem, calc(1.04rem + 0.40vw), 1.41rem);
+    // Step 2: 20.25px → 28.13px 
+    --step-2: clamp(1.27rem, calc(1.12rem + 0.70vw), 1.76rem);
+    // Step 3: 22.78px → 35.16px 
+    --step-3: clamp(1.42rem, calc(1.20rem + 1.11vw), 2.20rem);
+    // Step 4: 25.63px → 43.95px 
+    --step-4: clamp(1.60rem, calc(1.27rem + 1.64vw), 2.75rem);
+
+
+    // spaces
+
+    // Space 3xs: 8px → 20px 
+    --space-3xs: clamp(0.50rem, calc(0.29rem + 1.07vw), 1.25rem);
+    // Space 2xs: 16px → 40px 
+    --space-2xs: clamp(1.00rem, calc(0.57rem + 2.14vw), 2.50rem);
+    // Space xs: 24px → 60px 
+    --space-xs: clamp(1.50rem, calc(0.86rem + 3.21vw), 3.75rem);
+    // Space s: 32px → 80px 
+    --space-s: clamp(2.00rem, calc(1.14rem + 4.29vw), 5.00rem);
+    // Space m: 48px → 120px 
+    --space-m: clamp(3.00rem, calc(1.71rem + 6.43vw), 7.50rem);
+    // Space l: 64px → 160px 
+    --space-l: clamp(4.00rem, calc(2.29rem + 8.57vw), 10.00rem);
+    // Space xl: 96px → 240px 
+    --space-xl: clamp(6.00rem, calc(3.43rem + 12.86vw), 15.00rem);
+    // Space 2xl: 128px → 320px 
+    --space-2xl: clamp(8.00rem, calc(4.57rem + 17.14vw), 20.00rem);
+    // Space 3xl: 192px → 480px 
+    --space-3xl: clamp(12.00rem, calc(6.86rem + 25.71vw), 30.00rem);
+
+    // One-up pairs 
+    // Space 3xs-2xs: 8px → 40px 
+    --space-3xs-2xs: clamp(0.50rem, calc(-0.07rem + 2.86vw), 2.50rem);
+    // Space 2xs-xs: 16px → 60px 
+    --space-2xs-xs: clamp(1.00rem, calc(0.21rem + 3.93vw), 3.75rem);
+    // Space xs-s: 24px → 80px 
+    --space-xs-s: clamp(1.50rem, calc(0.50rem + 5.00vw), 5.00rem);
+    // Space s-m: 32px → 120px 
+    --space-s-m: clamp(2.00rem, calc(0.43rem + 7.86vw), 7.50rem);
+    // Space m-l: 48px → 160px 
+    --space-m-l: clamp(3.00rem, calc(1.00rem + 10.00vw), 10.00rem);
+    // Space l-xl: 64px → 240px 
+    --space-l-xl: clamp(4.00rem, calc(0.86rem + 15.71vw), 15.00rem);
+    // Space xl-2xl: 96px → 320px 
+    --space-xl-2xl: clamp(6.00rem, calc(2.00rem + 20.00vw), 20.00rem);
+    // Space 2xl-3xl: 128px → 480px 
+    --space-2xl-3xl: clamp(8.00rem, calc(1.71rem + 31.43vw), 30.00rem);
+
+    // Custom pairs 
+    // Space s-l: 32px → 160px 
+    --space-s-l: clamp(2.00rem, calc(-0.29rem + 11.43vw), 10.00rem);
+}

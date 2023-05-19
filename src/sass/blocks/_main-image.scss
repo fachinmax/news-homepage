@@ -1,0 +1,15 @@
+@use '../abstracts/breakpoints';
+
+
+.main-image {
+    @media (max-width: map-get(breakpoints.$breakpoints, 'tablet')) {
+        // background-image: url('./../images/image-web-3-mobile.jpg'); -> don't function
+        content: url('./../images/image-web-3-mobile.jpg');
+        &::before {
+            content: 'dsaf';
+            color: red;
+            font-size: 40px;
+            z-index: 99;
+        }
+    }
+}

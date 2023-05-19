@@ -1,0 +1,6 @@
+.switcher {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    justify-items: stretch;
+    justify-content: center;
+}

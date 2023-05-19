@@ -1,0 +1,14 @@
+.cta {
+    padding: 0.7em 2em;
+    background-color: var(--color-primary-soft-red);
+    color: var(--color-neutral-off-white);
+    font-size: var(--step-1);
+    font-weight: var(--font-weight-700);
+    text-transform: uppercase;
+    letter-spacing: 0.4rem;
+    transition: background-color .25s ease-in-out;
+
+    &:hover {
+        background-color: var(--color-neutral-very-dark-blue);
+    }
+}
